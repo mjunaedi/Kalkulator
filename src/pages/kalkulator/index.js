@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react'
-import { View, StatusBar, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, StatusBar, Text, StyleSheet } from 'react-native';
 
-import InputNomer from './InputNomer';
+import InputNomer from '../../../InputNomer';
 
 const buttons = [
     ['Bersihkan', 'Hapus',],
@@ -11,6 +11,31 @@ const buttons = [
     ['1', '2', '3', '-'],
     ['0', ',', '=', '+']
 ];
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    hasil: {
+        flex: 3,
+        backgroundColor: '#000'
+    },
+    input: {
+        flex: 7,
+        backgroundColor: '#000'
+    },
+    texthasil: {
+        fontSize: 60,
+        color: '#fff',
+        paddingHorizontal: 15,
+        paddingVertical: 30,
+        textAlign: 'right'
+    },
+    inputRow: {
+        flex: 1,
+        flexDirection: "row"
+    }
+})
 
 export default class App extends Component {
 
@@ -130,6 +155,7 @@ export default class App extends Component {
     }
 
     render() {
+        const { navigation } = this.props
         return (
             <View style={styles.container}>
                 <StatusBar backgroundColor="#000" barStyle="light-content" />
@@ -147,27 +173,3 @@ export default class App extends Component {
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    hasil: {
-        flex: 3,
-        backgroundColor: '#000'
-    },
-    input: {
-        flex: 7,
-        backgroundColor: '#000'
-    },
-    texthasil: {
-        fontSize: 60,
-        color: '#fff',
-        paddingHorizontal: 15,
-        paddingVertical: 30,
-        textAlign: 'right'
-    },
-    inputRow: {
-        flex: 1,
-        flexDirection: "row"
-    }
-})
